@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "./components/nav";
 import { Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
+import Footer from "./components/footer";
 
 export const metadata: Metadata = {
 	title: "Next.js Pokedex",
@@ -18,8 +19,9 @@ export default function RootLayout({
 		<html lang="en">
 			<body className="antialiased">
 				<Theme accentColor="blue" grayColor="gray">
-					<Nav></Nav>
+					<Nav />
 					{children}
+					<Footer />
 				</Theme>
 			</body>
 		</html>

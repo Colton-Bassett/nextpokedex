@@ -1,24 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Flex } from "@radix-ui/themes";
 
 export default function Nav() {
 	return (
 		<nav>
-			<Link
-				href="/"
-				className="flex justify-start px-8 h-16 items-center text-2xl"
-			>
-				<Image
-					className="dark:invert"
-					src="/next.svg"
-					alt="Next.js logo"
-					// 180, 38
-					width={90}
-					height={19}
-					priority
-				/>
-				<span className="mx-2">Pokedex</span>
-			</Link>
+			<Flex gap="3" className="h-16 items-center px-7">
+				<Link href="/" className="flex  text-2xl gap-3">
+					<Image
+						className="dark:invert"
+						src="/next.svg"
+						alt="Next.js logo"
+						width={90}
+						height={19}
+						priority
+					/>
+					<span className="">Pokedex</span>
+				</Link>
+			</Flex>
 		</nav>
 	);
 }
