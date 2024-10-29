@@ -1,7 +1,7 @@
 ## Todo
 
 -   [x] Project scaffolding (radixui, prettier)
--   [ ] Host project on Vercel
+-   [x] Host project on Vercel
 -   [ ] Build out basic UI
 -   [ ] Implement PokeAPI calls
 -   [ ] Display data
