@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "./components/nav";
+import { Theme } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
 
 export const metadata: Metadata = {
 	title: "Next.js Pokedex",
@@ -15,8 +17,10 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className="antialiased">
-				<Nav></Nav>
-				{children}
+				<Theme accentColor="blue" grayColor="gray">
+					<Nav></Nav>
+					{children}
+				</Theme>
 			</body>
 		</html>
 	);

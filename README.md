@@ -1,3 +1,7 @@
+## Next.js Pokedex
+
+Next.jsm, Radix, Tailwind, Vercel
+
 ## Todo
 
 -   [x] Project scaffolding (radixui, prettier)
