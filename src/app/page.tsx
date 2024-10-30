@@ -4,6 +4,7 @@ import {
 	getAllPokemon,
 	fetchAndAddPokemon,
 } from "./actions/actions";
+import GetPokemonButton from "./components/getPokemonButton";
 
 export default async function Home() {
 	// fetchAndAddPokemon();
@@ -41,9 +42,10 @@ export default async function Home() {
 			<main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
 				<Flex direction="column" gap="2">
 					<Text>Hello from Radix Themes</Text>
-					<Button color="gray" variant="solid" highContrast>
+					{/* <Button color="gray" variant="solid" highContrast>
 						Lets go
-					</Button>
+					</Button> */}
+					<GetPokemonButton />
 				</Flex>
 			</main>
 		</div>

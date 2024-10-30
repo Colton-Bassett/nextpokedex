@@ -22,20 +22,25 @@ interface Pokemon {
 // 	}
 // }
 export async function addPokemonToDB(pokemonList: Pokemon[]) {
+	const pokemonId = 2;
+	const pokemonName = "Ivysaur";
+	const pokemonType = "GrassPoison";
 	try {
 		// Constructing the bulk insert query
 		const values = pokemonList
 			.map(
 				(pokemon) => `(${pokemon.id}, ${pokemon.name}, ${pokemon.type})`
 			)
-			.join(", ");
+			.join(",");
 
-		console.log(values);
-		// const query = `
-		//     INSERT INTO pokedex_pokemon (id, name, type) VALUES ${values};
-		// `;
+		console.log(
+			`await sql INSERT INTO pokedex_pokemon (id, name, type) VALUES ${values}`
+		);
+		console.log(
+			`await sql INSERT INTO pokedex_pokemon (id, name, type) VALUES (1, 'Bulbasaur', 'GrassPoison'),(${pokemonId}, ${pokemonName}, ${pokemonType})`
+		);
 
-		// await sql`${query}`;
+		// await sql`INSERT INTO pokedex_pokemon (id, name, type) VALUES (1, 'Bulbasaur', 'GrassPoison'),(${pokemonId}, ${pokemonName}, ${pokemonType})`;
 	} catch (error) {
 		console.error("Error inserting Pokémon into database:", error);
 		return { error };
@@ -72,6 +77,13 @@ export async function getAllPokemon() {
 export async function fetchAndAddPokemon() {
 	const pokemon = await getAllPokemon();
 	console.log(pokemon);
+	if (pokemon) {
+		addPokemonToDB(pokemon);
+	}
+}
+
+export async function deleteAllPokemon() {
+	await sql`DELETE FROM pokedex_pokemon;`;
 }
 
 function capitalizeFirstLetter(string: string): string {
