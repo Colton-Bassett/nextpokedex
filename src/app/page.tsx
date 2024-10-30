@@ -1,6 +1,16 @@
 import { Flex, Text, Button } from "@radix-ui/themes";
+import {
+	addPokemonToDB,
+	getAllPokemon,
+	fetchAndAddPokemon,
+} from "./actions/actions";
 
 export default async function Home() {
+	// fetchAndAddPokemon();
+	// addPokemon();
+
+	// getAllPokemon();
+
 	// https://pokeapi.co/api/v2/pokemon/${id}
 	// "https://pokeapi.co/api/v2/pokemon?limit=2&offset=0"
 
