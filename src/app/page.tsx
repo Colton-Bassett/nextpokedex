@@ -1,7 +1,19 @@
 import { Flex, Text } from "@radix-ui/themes";
 import GetPokemonButton from "./components/getPokemonButton";
+import { mockSlowRequest } from "./actions/actions";
 
 export default async function Home() {
+	await mockSlowRequest();
+
+	// const fetchPokemon = async () => {
+	// 	const data = await getAllPokemonFromDB();
+	// 	if (data) {
+	// 		console.log(data);
+	// 	} else {
+	// 		console.error("Failed to fetch Pokémon:");
+	// 	}
+	// };
+
 	// fetchAndAddPokemon();
 	// addPokemon();
 

@@ -46,6 +46,19 @@ export async function addPokemonToDB(pokemonList: Pokemon[]) {
 	}
 }
 
+export async function getAllPokemonFromDB() {
+	try {
+		const allPokemon =
+			await sql`SELECT * FROM pokedex_pokemon WHERE id <= 12`;
+		console.log(allPokemon.rows);
+
+		return allPokemon.rows;
+	} catch (error) {
+		console.error("Error fetching all pokemon from DB:", error);
+		return { error };
+	}
+}
+
 export async function fetchAndAddPokemon() {
 	const pokemon = await getAllPokemon();
 	// console.log(pokemon);
@@ -59,7 +72,7 @@ export async function getAllPokemon() {
 	const pokemonList: Pokemon[] = [];
 
 	try {
-		for (let id = 1; id <= 2; id++) {
+		for (let id = 1; id <= 151; id++) {
 			const response = await fetch(
 				`https://pokeapi.co/api/v2/pokemon/${id}/`
 			);
@@ -85,4 +98,14 @@ export async function getAllPokemon() {
 // HELPERS
 function capitalizeFirstLetter(string: string): string {
 	return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+export async function mockSlowRequest() {
+	return new Promise((resolve) => {
+		// Simulate a delay of 2 seconds (2000 milliseconds)
+		setTimeout(() => {
+			resolve("Data retrieved after a slow request!");
+			console.log("Finished slow request!");
+		}, 2000);
+	});
 }

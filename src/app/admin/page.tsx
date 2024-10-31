@@ -1,4 +1,5 @@
 import { Flex, Text } from "@radix-ui/themes";
+import GetPokemonButton from "../components/getPokemonButton";
 
 export default function AdminPage() {
 	return (
@@ -6,6 +7,7 @@ export default function AdminPage() {
 			<main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
 				<Flex direction="column" gap="2">
 					<Text>Admin Page</Text>
+					<GetPokemonButton />
 				</Flex>
 			</main>
 		</div>
