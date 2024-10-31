@@ -7,6 +7,11 @@ interface Pokemon {
 	type: string;
 }
 
+// DB
+export async function deleteAllPokemon() {
+	await sql`DELETE FROM pokedex_pokemon;`;
+}
+
 export async function addPokemonToDB(pokemonList: Pokemon[]) {
 	try {
 		if (pokemonList.length === 0) {
@@ -41,6 +46,15 @@ export async function addPokemonToDB(pokemonList: Pokemon[]) {
 	}
 }
 
+export async function fetchAndAddPokemon() {
+	const pokemon = await getAllPokemon();
+	// console.log(pokemon);
+	if (pokemon) {
+		addPokemonToDB(pokemon);
+	}
+}
+
+// API
 export async function getAllPokemon() {
 	const pokemonList: Pokemon[] = [];
 
@@ -68,18 +82,7 @@ export async function getAllPokemon() {
 	}
 }
 
-export async function fetchAndAddPokemon() {
-	const pokemon = await getAllPokemon();
-	// console.log(pokemon);
-	if (pokemon) {
-		addPokemonToDB(pokemon);
-	}
-}
-
-export async function deleteAllPokemon() {
-	await sql`DELETE FROM pokedex_pokemon;`;
-}
-
+// HELPERS
 function capitalizeFirstLetter(string: string): string {
 	return string.charAt(0).toUpperCase() + string.slice(1);
 }
