@@ -1,4 +1,4 @@
-import { Flex, Text } from "@radix-ui/themes";
+import { Card, Flex, Grid, Text } from "@radix-ui/themes";
 import GetPokemonButton from "./components/getPokemonButton";
 import { mockSlowRequest } from "./actions/actions";
 import { sql } from "@vercel/postgres";
@@ -34,25 +34,27 @@ export default async function Home() {
 	// };
 
 	return (
-		<div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-			<main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+		<div className="flex items-center justify-items-center min-h-screen p-8 pb-20 min-w-full">
+			<main className="flex flex-col items-center max-w-5xl w-full m-auto px-7">
 				<Flex direction="column" gap="2">
-					<ul>
+					<Grid columns="3" gap="3" rows="4" width="auto">
 						{rows.map((p) => (
-							<div key={p.id}>
-								<Image
-									className="dark:invert"
-									src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${p.id}.png`}
-									alt="Next.js logo"
-									width={90}
-									height={19}
-									priority
-								/>
-								<li>{p.name}</li>
-								<li>{p.type}</li>
-							</div>
+							<Card key={p.id}>
+								<Flex direction="column" align="center">
+									<Image
+										className="dark:invert"
+										src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${p.id}.png`}
+										alt={`${p.name} sprite`}
+										width={90}
+										height={19}
+										priority
+									/>
+									<Text>{p.name}</Text>
+									<Text>{p.type}</Text>
+								</Flex>
+							</Card>
 						))}
-					</ul>
+					</Grid>
 					<GetPokemonButton />
 				</Flex>
 			</main>
