@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@radix-ui/themes";
-import { fetchAndAddPokemon, deleteAllPokemon } from "../actions/actions";
+import { fetchAndAddPokemon } from "../actions/actions";
 
 export default function GetPokemonButton() {
 	return (

@@ -1,9 +1,4 @@
-import { Flex, Text, Button } from "@radix-ui/themes";
-import {
-	addPokemonToDB,
-	getAllPokemon,
-	fetchAndAddPokemon,
-} from "./actions/actions";
+import { Flex, Text } from "@radix-ui/themes";
 import GetPokemonButton from "./components/getPokemonButton";
 
 export default async function Home() {

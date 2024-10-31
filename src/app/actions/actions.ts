@@ -1,6 +1,5 @@
 "use server";
 import { sql } from "@vercel/postgres";
-import { NextResponse } from "next/server";
 
 interface Pokemon {
 	id: number;
@@ -8,39 +7,34 @@ interface Pokemon {
 	type: string;
 }
 
-// export async function addPokemonToDB() {
-// 	const pokemonId = 2;
-// 	const pokemonName = "Ivysaur";
-// 	const pokemonType = "GrassPoison";
-
-// 	try {
-// 		if (!pokemonId || !pokemonName || !pokemonType)
-// 			throw new Error("Pet and owner names required");
-// 		await sql`INSERT INTO pokedex_pokemon (id, name, type) VALUES (${pokemonId}, ${pokemonName}, ${pokemonType});`;
-// 	} catch (error) {
-// 		return NextResponse.json({ error }, { status: 500 });
-// 	}
-// }
 export async function addPokemonToDB(pokemonList: Pokemon[]) {
-	const pokemonId = 2;
-	const pokemonName = "Ivysaur";
-	const pokemonType = "GrassPoison";
 	try {
-		// Constructing the bulk insert query
+		if (pokemonList.length === 0) {
+			return { success: true }; // No pokemon to insert
+		}
+
+		// Build the PARAMETERIZED query string
 		const values = pokemonList
-			.map(
-				(pokemon) => `(${pokemon.id}, ${pokemon.name}, ${pokemon.type})`
-			)
-			.join(",");
+			.map((_, i) => {
+				const offset = i * 3;
+				return `($${offset + 1}, $${offset + 2}, $${offset + 3})`;
+			})
+			.join(", ");
 
-		console.log(
-			`await sql INSERT INTO pokedex_pokemon (id, name, type) VALUES ${values}`
-		);
-		console.log(
-			`await sql INSERT INTO pokedex_pokemon (id, name, type) VALUES (1, 'Bulbasaur', 'GrassPoison'),(${pokemonId}, ${pokemonName}, ${pokemonType})`
-		);
+		// Create the complete query string
+		const queryString = `INSERT INTO pokedex_pokemon (id, name, type) VALUES ${values}`;
 
-		// await sql`INSERT INTO pokedex_pokemon (id, name, type) VALUES (1, 'Bulbasaur', 'GrassPoison'),(${pokemonId}, ${pokemonName}, ${pokemonType})`;
+		// Flatten all values into a single array
+		const parameters = pokemonList.flatMap((pokemon) => [
+			pokemon.id,
+			pokemon.name,
+			pokemon.type,
+		]);
+
+		// Execute the query using the raw template literal
+		await sql.query(queryString, parameters);
+
+		return { success: true };
 	} catch (error) {
 		console.error("Error inserting Pokémon into database:", error);
 		return { error };
@@ -52,10 +46,10 @@ export async function getAllPokemon() {
 
 	try {
 		for (let id = 1; id <= 2; id++) {
-			let response = await fetch(
+			const response = await fetch(
 				`https://pokeapi.co/api/v2/pokemon/${id}/`
 			);
-			let data = await response.json();
+			const data = await response.json();
 
 			const pokemon: Pokemon = {
 				id: data.id,
@@ -76,7 +70,7 @@ export async function getAllPokemon() {
 
 export async function fetchAndAddPokemon() {
 	const pokemon = await getAllPokemon();
-	console.log(pokemon);
+	// console.log(pokemon);
 	if (pokemon) {
 		addPokemonToDB(pokemon);
 	}
