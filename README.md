@@ -6,9 +6,9 @@ Next.jsm, Radix, Tailwind, Vercel
 
 -   [x] Project scaffolding (radixui, prettier)
 -   [x] Host project on Vercel
--   [ ] Build out basic UI
--   [ ] Implement PokeAPI calls
--   [ ] Display data
+-   [x] Build out basic UI
+-   [x] Implement PokeAPI calls
+-   [x] Display data
 -   [ ] Refine UI
 -   [ ] Get dynamic routes / pages working
 -   [ ] Handle loading states (skeletons)

@@ -1,6 +1,7 @@
 import { Flex } from "@radix-ui/themes";
 import GetPokemonButton from "./components/getPokemonButton";
 import Pokemon, { PokemonList } from "./components/pokemon";
+import Link from "next/link";
 
 export default async function Home() {
 	// const { rows } =
@@ -37,12 +38,13 @@ export default async function Home() {
 				<Flex direction="column" gap="2">
 					<PokemonList>
 						{rows.map((p) => (
-							<Pokemon
-								key={p.id}
-								id={p.id}
-								name={p.name}
-								type={p.type}
-							/>
+							<Link key={p.id} href={`/pokemon/${p.id}`}>
+								<Pokemon
+									id={p.id}
+									name={p.name}
+									type={p.type}
+								/>
+							</Link>
 						))}
 					</PokemonList>
 					<GetPokemonButton />
