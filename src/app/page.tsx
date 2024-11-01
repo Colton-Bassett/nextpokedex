@@ -2,6 +2,7 @@ import { Flex } from "@radix-ui/themes";
 import GetPokemonButton from "./components/getPokemonButton";
 import Pokemon, { PokemonList } from "./components/pokemon";
 import Link from "next/link";
+// import { sql } from "@vercel/postgres";
 
 export default async function Home() {
 	// const { rows } =

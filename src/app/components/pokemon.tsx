@@ -11,7 +11,7 @@ export default function Pokemon({
 	type: string;
 }) {
 	return (
-		<Card key={id}>
+		<Card key={id} className="">
 			<Flex direction="column" align="center">
 				<Image
 					className="dark:invert"
