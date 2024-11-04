@@ -11,14 +11,14 @@ export default function Pokemon({
 	type: string;
 }) {
 	return (
-		<Card key={id} className="">
+		<Card key={id} className="hover:shadow-[0_0_0_0.25px_rgba(17,17,17,1)]">
 			<Flex direction="column" align="center">
 				<Image
 					className="dark:invert"
 					src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
 					alt={`${name} sprite`}
-					width={90}
-					height={90}
+					width={128}
+					height={128}
 					priority
 				/>
 				<Text>{name}</Text>
@@ -35,8 +35,8 @@ export function PokemonList({
 }>) {
 	return (
 		<Grid
-			columns={{ initial: "1", sm: "2", md: "3" }}
-			gap="3"
+			columns={{ initial: "2", sm: "3", md: "4" }}
+			gap="8"
 			rows="4"
 			width="auto"
 		>
