@@ -11,7 +11,10 @@ export default function Pokemon({
 	type: string;
 }) {
 	return (
-		<Card key={id} className="hover:shadow-[0_0_0_0.25px_rgba(17,17,17,1)]">
+		<Card
+			key={id}
+			className="bg-transparent hover:shadow-[0_0_0_0.25px_rgba(17,17,17,1)] hover:bg-white transition-shadow duration-200 ease-in-out"
+		>
 			<Flex direction="column" align="center">
 				<Image
 					className="dark:invert"
