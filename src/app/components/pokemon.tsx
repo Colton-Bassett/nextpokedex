@@ -27,15 +27,19 @@ export default function Pokemon({
 					height={128}
 					priority
 				/>
-				<Text>{name}</Text>
-				<Flex>
+				<Text className="mb-2">{name}</Text>
+				<Flex gap="2">
 					{typeA ? (
 						<Flex
 							className={`${getPokemonTypeColor(typeA)} px-2 rounded-xl min-w-14`}
 							align="center"
 							justify="center"
 						>
-							<Text className="text-sm font-light">{typeA}</Text>
+							<Text
+								className={`${getPokemonTypeTextColor(typeA)} text-sm font-light text-`}
+							>
+								{typeA}
+							</Text>
 						</Flex>
 					) : (
 						<></>
@@ -47,7 +51,9 @@ export default function Pokemon({
 							align="center"
 							justify="center"
 						>
-							<Text className="text-sm font-light text-center">
+							<Text
+								className={`${getPokemonTypeTextColor(typeB)} text-sm font-light text-center`}
+							>
 								{typeB}
 							</Text>
 						</Flex>
@@ -108,25 +114,50 @@ function separatePokemonTypes(type: string): string[] {
 
 function getPokemonTypeColor(type: string): string {
 	const typeColorMap: { [key: string]: string } = {
-		Normal: "bg-gray-400",
-		Fire: "bg-red-500",
-		Water: "bg-blue-500",
-		Electric: "bg-yellow-400",
-		Grass: "bg-green-500",
-		Ice: "bg-cyan-300",
-		Fighting: "bg-red-700",
-		Poison: "bg-purple-500",
-		Ground: "bg-yellow-600",
-		Flying: "bg-indigo-300",
-		Psychic: "bg-pink-500",
-		Bug: "bg-lime-500",
-		Rock: "bg-yellow-800",
-		Ghost: "bg-purple-700",
-		Dragon: "bg-indigo-600",
-		Dark: "bg-gray-800",
-		Steel: "bg-gray-500",
-		Fairy: "bg-pink-300",
+		Normal: "bg-gray-300",
+		Fire: "bg-red-300",
+		Water: "bg-blue-300",
+		Electric: "bg-yellow-200",
+		Grass: "bg-green-300",
+		Ice: "bg-cyan-100",
+		Fighting: "bg-red-400",
+		Poison: "bg-purple-300",
+		Ground: "bg-yellow-400",
+		Flying: "bg-indigo-100",
+		Psychic: "bg-fuchsia-300",
+		Bug: "bg-lime-300",
+		Rock: "bg-yellow-400",
+		Ghost: "bg-purple-400",
+		Dragon: "bg-indigo-400",
+		Dark: "bg-gray-600",
+		Steel: "bg-gray-300",
+		Fairy: "bg-pink-200",
 	};
 
 	return typeColorMap[type] || "bg-gray-200"; // Returns a default color if type not found
+}
+
+function getPokemonTypeTextColor(type: string): string {
+	const typeColorMap: { [key: string]: string } = {
+		Normal: "text-gray-900",
+		Fire: "text-red-900",
+		Water: "text-blue-900",
+		Electric: "text-yellow-900",
+		Grass: "text-green-900",
+		Ice: "text-cyan-900",
+		Fighting: "text-red-900",
+		Poison: "text-purple-900",
+		Ground: "text-yellow-900",
+		Flying: "text-indigo-900",
+		Psychic: "text-fuchsia-900",
+		Bug: "text-lime-900",
+		Rock: "text-yellow-900",
+		Ghost: "text-purple-900",
+		Dragon: "text-indigo-900",
+		Dark: "text-gray-900",
+		Steel: "text-gray-900",
+		Fairy: "text-pink-900",
+	};
+
+	return typeColorMap[type] || "text-gray-900";
 }
