@@ -14,7 +14,7 @@ export default async function PokemonPage({
 
   return (
     <div className="flex min-h-screen min-w-full items-center justify-items-center p-8 pb-20">
-      <div className="m-auto flex w-full max-w-5xl flex-col items-center px-7">
+      <div className="m-auto flex w-full max-w-4xl flex-col items-center px-7">
         <Flex
           direction="column"
           gap="2"

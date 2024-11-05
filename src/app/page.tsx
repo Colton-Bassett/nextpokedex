@@ -35,7 +35,7 @@ export default async function Home() {
   return (
     // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
     <div className="flex min-h-screen min-w-full items-center justify-items-center bg-[linear-gradient(180deg,#fff_10%,#fafafa_30%,#fafafa_100%)] p-8 pb-20">
-      <main className="m-auto flex w-full max-w-5xl flex-col items-center px-7">
+      <main className="m-auto flex w-full max-w-4xl flex-col items-center px-7">
         <Flex direction="column" gap="2">
           <PokemonList>
             {rows.map((p) => (
@@ -44,7 +44,9 @@ export default async function Home() {
               </Link>
             ))}
           </PokemonList>
-          <GetPokemonButton />
+          <Flex direction="column" gap="2" minWidth="100%" className="mt-8">
+            <GetPokemonButton />
+          </Flex>
         </Flex>
       </main>
     </div>

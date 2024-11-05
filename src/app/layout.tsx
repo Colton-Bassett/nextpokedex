@@ -4,40 +4,41 @@ import "./globals.css";
 import Nav from "./components/nav";
 import { Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
+import "./radixTheme.css";
 import Footer from "./components/footer";
 
 const geistSans = localFont({
-	src: "./fonts/GeistVF.woff",
-	variable: "--font-geist-sans",
-	weight: "100 900",
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
 });
 const geistMono = localFont({
-	src: "./fonts/GeistMonoVF.woff",
-	variable: "--font-geist-mono",
-	weight: "100 900",
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
-	title: "Next.js Pokedex",
-	description: "Pokedex created with  Next.js",
+  title: "Next.js Pokedex",
+  description: "Pokedex created with  Next.js",
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<html lang="en">
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
-				<Theme accentColor="blue" grayColor="gray">
-					<Nav />
-					{children}
-					<Footer />
-				</Theme>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Theme accentColor="blue" grayColor="gray">
+          <Nav />
+          {children}
+          <Footer />
+        </Theme>
+      </body>
+    </html>
+  );
 }

@@ -75,7 +75,7 @@ export function PokemonList({
     <Grid
       columns={{ initial: "1", sm: "2", md: "3", lg: "4" }}
       gap="8"
-      rows="4"
+      rows="3"
       width="auto"
     >
       {children}
