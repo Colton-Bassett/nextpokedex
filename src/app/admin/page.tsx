@@ -12,22 +12,37 @@ export default function AdminPage() {
         direction="column"
         align="center"
       >
+        <Text className="mb-8 text-xl text-gray-500">
+          <span className="mr-4 text-3xl font-bold text-gray-900">
+            Admin Page
+          </span>{" "}
+          Everything you need to build great pokemon on the web.
+        </Text>
         <Grid
-          columns={{ initial: "1", sm: "2", md: "3" }}
+          columns={{ initial: "1", sm: "1", md: "3" }}
           gap="8"
-          rows="repeat(1,150px)"
+          rows="repeat(1,180px)"
           width="auto"
         >
-          <AdminCard title="Admin Page"></AdminCard>
-          <AdminCard title="Next Page"></AdminCard>
-          <AdminCard title="Delete Page"></AdminCard>
+          <AdminCard
+            title="Fetch Pokemon"
+            subtitle="Fetch and log all pokemon in console (debugging)"
+          ></AdminCard>
+          <AdminCard
+            title="Save Pokemon"
+            subtitle="Fetch and save all pokemon to postgres database"
+          ></AdminCard>
+          <AdminCard
+            title="Delete Pokemon"
+            subtitle="Delete all pokemon from postgres database"
+          ></AdminCard>
         </Grid>
       </Flex>
     </Flex>
   );
 }
 
-function AdminCard({ title }: { title: string }) {
+function AdminCard({ title, subtitle }: { title: string; subtitle: string }) {
   return (
     <Card className="w-60">
       <Flex
@@ -37,7 +52,12 @@ function AdminCard({ title }: { title: string }) {
         className="h-full"
         justify="between"
       >
-        <Text>{title}</Text>
+        <Flex direction="column">
+          <Text className="text-lg" weight="bold">
+            {title}
+          </Text>
+          <Text>{subtitle}</Text>
+        </Flex>
         <GetPokemonButton />
       </Flex>
     </Card>
