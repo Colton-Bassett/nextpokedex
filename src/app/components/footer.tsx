@@ -19,13 +19,13 @@ export default function Footer() {
             <span className="">Pokedex</span>
           </Link>
           <Link
-            href="/"
+            href="/help"
             className="text-stone-500 transition-colors duration-200 hover:text-stone-900"
           >
             <span className="text-lg">Help</span>
           </Link>
           <Link
-            href="/"
+            href="/disclaimer"
             className="text-stone-500 transition-colors duration-200 hover:text-stone-900"
           >
             <span className="text-lg">Disclaimer</span>
