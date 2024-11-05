@@ -34,17 +34,19 @@ export default async function Home() {
 
   return (
     // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-    <main className="m-auto min-h-screen min-w-full flex-col items-center justify-items-center bg-[linear-gradient(180deg,#fff_10%,#fafafa_30%,#fafafa_100%)] p-8 pb-20">
-      <Flex direction="column" gap="2">
-        <PokemonList>
-          {rows.map((p) => (
-            <Link key={p.id} href={`/pokemon/${p.id}`}>
-              <Pokemon id={p.id} name={p.name} type={p.type} />
-            </Link>
-          ))}
-        </PokemonList>
-        <Flex direction="column" gap="2" minWidth="100%" className="mt-8">
-          <GetPokemonButton />
+    <main className="min-h-screen min-w-full flex-col items-center justify-items-center bg-[linear-gradient(180deg,#fff_10%,#fafafa_30%,#fafafa_100%)] p-8 pb-20">
+      <Flex className="m-auto w-full max-w-4xl" justify="center">
+        <Flex direction="column" gap="2">
+          <PokemonList>
+            {rows.map((p) => (
+              <Link key={p.id} href={`/pokemon/${p.id}`}>
+                <Pokemon id={p.id} name={p.name} type={p.type} />
+              </Link>
+            ))}
+          </PokemonList>
+          <Flex direction="column" gap="2" minWidth="100%" className="mt-8">
+            <GetPokemonButton />
+          </Flex>
         </Flex>
       </Flex>
     </main>

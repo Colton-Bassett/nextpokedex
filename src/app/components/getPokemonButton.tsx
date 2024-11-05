@@ -22,7 +22,6 @@ export default function GetPokemonButton() {
       variant="solid"
       highContrast
       disabled={isPending}
-      className="cursor-pointer"
       onClick={() => {
         startTransition(fetchPokemon);
       }}
