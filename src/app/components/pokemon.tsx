@@ -1,4 +1,4 @@
-import { Card, Flex, Text, Grid, Box } from "@radix-ui/themes";
+import { Card, Flex, Text, Grid } from "@radix-ui/themes";
 import Image from "next/image";
 
 export default function Pokemon({
@@ -16,7 +16,7 @@ export default function Pokemon({
   return (
     <Card
       key={id}
-      className="bg-transparent transition-shadow duration-200 ease-in-out hover:bg-white hover:shadow-[0_0_0_0.25px_rgba(17,17,17,1)]"
+      className="min-w-44 bg-transparent transition-shadow duration-200 ease-in-out hover:bg-white hover:shadow-[0_0_0_0.25px_rgba(1,1,1,1)]"
     >
       <Flex direction="column" align="center">
         <Image
@@ -36,7 +36,7 @@ export default function Pokemon({
               justify="center"
             >
               <Text
-                className={`${getPokemonTypeTextColor(typeA)} text- text-sm font-light`}
+                className={`${getPokemonTypeTextColor(typeA)} text-sm font-light`}
               >
                 {typeA}
               </Text>
@@ -52,7 +52,7 @@ export default function Pokemon({
               justify="center"
             >
               <Text
-                className={`${getPokemonTypeTextColor(typeB)} text-center text-sm font-light`}
+                className={`${getPokemonTypeTextColor(typeB)} text-sm font-light`}
               >
                 {typeB}
               </Text>
@@ -73,7 +73,7 @@ export function PokemonList({
 }>) {
   return (
     <Grid
-      columns={{ initial: "2", sm: "3", md: "4" }}
+      columns={{ initial: "1", sm: "2", md: "3", lg: "4" }}
       gap="8"
       rows="4"
       width="auto"
@@ -120,17 +120,17 @@ function getPokemonTypeColor(type: string): string {
     Electric: "bg-yellow-200",
     Grass: "bg-green-300",
     Ice: "bg-cyan-100",
-    Fighting: "bg-red-400",
+    Fighting: "bg-rose-400",
     Poison: "bg-purple-300",
-    Ground: "bg-yellow-400",
+    Ground: "bg-orange-300",
     Flying: "bg-indigo-100",
     Psychic: "bg-fuchsia-300",
     Bug: "bg-lime-300",
-    Rock: "bg-yellow-400",
+    Rock: "bg-stone-400",
     Ghost: "bg-purple-400",
-    Dragon: "bg-indigo-400",
-    Dark: "bg-gray-600",
-    Steel: "bg-gray-300",
+    Dragon: "bg-indigo-300",
+    Dark: "bg-gray-400",
+    Steel: "bg-slate-300",
     Fairy: "bg-pink-200",
   };
 
@@ -145,17 +145,17 @@ function getPokemonTypeTextColor(type: string): string {
     Electric: "text-yellow-900",
     Grass: "text-green-900",
     Ice: "text-cyan-900",
-    Fighting: "text-red-900",
+    Fighting: "text-rose-900",
     Poison: "text-purple-900",
-    Ground: "text-yellow-900",
+    Ground: "text-orange-900",
     Flying: "text-indigo-900",
     Psychic: "text-fuchsia-900",
     Bug: "text-lime-900",
-    Rock: "text-yellow-900",
+    Rock: "text-stone-900",
     Ghost: "text-purple-900",
     Dragon: "text-indigo-900",
     Dark: "text-gray-900",
-    Steel: "text-gray-900",
+    Steel: "text-slate-900",
     Fairy: "text-pink-900",
   };
 
