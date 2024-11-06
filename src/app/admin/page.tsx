@@ -1,5 +1,6 @@
 import { Flex, Text, Card, Grid } from "@radix-ui/themes";
 import GetPokemonButton from "../components/getPokemonButton";
+import DeleteAllPokemonButton from "../components/deleteAllPokemonButton";
 
 export default function AdminPage() {
   return (
@@ -27,22 +28,36 @@ export default function AdminPage() {
           <AdminCard
             title="Fetch Pokemon"
             subtitle="Fetch and log all pokemon in console (debugging)"
-          ></AdminCard>
+          >
+            <GetPokemonButton />
+          </AdminCard>
           <AdminCard
             title="Save Pokemon"
             subtitle="Fetch and save all pokemon to postgres database"
-          ></AdminCard>
+          >
+            <GetPokemonButton />
+          </AdminCard>
           <AdminCard
             title="Delete Pokemon"
             subtitle="Delete all pokemon from postgres database"
-          ></AdminCard>
+          >
+            <DeleteAllPokemonButton />
+          </AdminCard>
         </Grid>
       </Flex>
     </Flex>
   );
 }
 
-function AdminCard({ title, subtitle }: { title: string; subtitle: string }) {
+function AdminCard({
+  title,
+  subtitle,
+  children,
+}: {
+  title: string;
+  subtitle: string;
+  children: Readonly<React.ReactNode>;
+}) {
   return (
     <Card className="w-60">
       <Flex
@@ -58,7 +73,8 @@ function AdminCard({ title, subtitle }: { title: string; subtitle: string }) {
           </Text>
           <Text>{subtitle}</Text>
         </Flex>
-        <GetPokemonButton />
+
+        {children}
       </Flex>
     </Card>
   );
