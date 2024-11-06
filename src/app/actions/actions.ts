@@ -63,10 +63,15 @@ export async function savePokemonToDB(pokemonList: Pokemon[]) {
 // Shows all pokemon in db
 export async function getAllPokemonFromDB() {
   try {
-    const allPokemon = await sql`SELECT * FROM pokedex_pokemon WHERE id <= 12`;
-    console.log(allPokemon.rows);
+    const result = await sql`SELECT * FROM pokedex_pokemon`;
+    const allPokemonList = result.rows;
+    console.log(allPokemonList);
 
-    return allPokemon.rows;
+    return {
+      success: true,
+      allPokemonList: allPokemonList,
+      pokemonCount: result.rowCount,
+    };
   } catch (error) {
     console.error("Error fetching all pokemon from DB:", error);
     return { error };

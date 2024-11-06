@@ -1,6 +1,6 @@
 import { Flex, Text, Card, Grid } from "@radix-ui/themes";
-import GetPokemonButton from "../components/getPokemonButton";
-import DeleteAllPokemonButton from "../components/deleteAllPokemonButton";
+import GetAllPokemonButton from "./components/getAllPokemonButton";
+import DeleteAllPokemonButton from "./components/deleteAllPokemonButton";
 
 export default function AdminPage() {
   return (
@@ -29,13 +29,13 @@ export default function AdminPage() {
             title="Fetch Pokemon"
             subtitle="Fetch and log all pokemon in console (debugging)"
           >
-            <GetPokemonButton />
+            <GetAllPokemonButton />
           </AdminCard>
           <AdminCard
             title="Save Pokemon"
             subtitle="Fetch and save all pokemon to postgres database"
           >
-            <GetPokemonButton />
+            <GetAllPokemonButton />
           </AdminCard>
           <AdminCard
             title="Delete Pokemon"

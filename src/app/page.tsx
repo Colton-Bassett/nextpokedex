@@ -1,5 +1,5 @@
 import { Flex } from "@radix-ui/themes";
-import GetPokemonButton from "./components/getPokemonButton";
+import GetPokemonButton from "./admin/components/getAllPokemonButton";
 import Pokemon, { PokemonList } from "./components/pokemon";
 import Link from "next/link";
 

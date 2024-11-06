@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, Dialog, Flex } from "@radix-ui/themes";
-import { deleteAllPokemonFromDB } from "../actions/actions";
+import { deleteAllPokemonFromDB } from "../../actions/actions";
 import { useTransition } from "react";
 
 export default function DeleteAllPokemonButton() {
