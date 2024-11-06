@@ -1,4 +1,5 @@
 "use server";
+import { capitalizeFirstLetter } from "@/lib/utils";
 import { sql } from "@vercel/postgres";
 
 interface Pokemon {
@@ -8,7 +9,8 @@ interface Pokemon {
 }
 
 // DB
-export async function deleteAllPokemon() {
+
+export async function deleteAllPokemonFromDB() {
   try {
     // check if authenticated
     const result = await sql`DELETE FROM pokedex_pokemon;`;
@@ -23,8 +25,8 @@ export async function deleteAllPokemon() {
   }
 }
 
-// Adds pokemon to db, called from fetchAndAddPokemon()
-export async function addPokemonToDB(pokemonList: Pokemon[]) {
+// saves a list of pokemon to db, called from fetchAndSavePokemonToDB()
+export async function savePokemonToDB(pokemonList: Pokemon[]) {
   try {
     if (pokemonList.length === 0) {
       return { success: true }; // No pokemon to insert
@@ -72,18 +74,18 @@ export async function getAllPokemonFromDB() {
 }
 
 // Main function
-export async function fetchAndAddPokemon() {
-  const pokemon = await getAllPokemon();
+export async function fetchAndSavePokemonToDB() {
+  const pokemon = await fetchPokemonFromAPI();
   // console.log(pokemon);
   if (pokemon) {
-    addPokemonToDB(pokemon);
+    savePokemonToDB(pokemon);
   }
 }
 
 // API
 
-// Gets pokemon from pokeapi
-export async function getAllPokemon() {
+// Fetches all pokemon from pokeAPI
+export async function fetchPokemonFromAPI() {
   const pokemonList: Pokemon[] = [];
 
   try {
@@ -106,19 +108,4 @@ export async function getAllPokemon() {
   } catch (error) {
     console.error("Error fetching Pokémon names:", error);
   }
-}
-
-// HELPERS
-function capitalizeFirstLetter(string: string): string {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-export async function mockSlowRequest() {
-  return new Promise((resolve) => {
-    // Simulate a delay of 2 seconds (2000 milliseconds)
-    setTimeout(() => {
-      resolve("Data retrieved after a slow request!");
-      console.log("Finished slow request!");
-    }, 2000);
-  });
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, Dialog, Flex } from "@radix-ui/themes";
-import { deleteAllPokemon } from "../actions/actions";
+import { deleteAllPokemonFromDB } from "../actions/actions";
 import { useTransition } from "react";
 
 export default function DeleteAllPokemonButton() {
@@ -35,7 +35,8 @@ export default function DeleteAllPokemonButton() {
               disabled={isPending}
               onClick={() => {
                 startTransition(async () => {
-                  const { success, deletedCount } = await deleteAllPokemon();
+                  const { success, deletedCount } =
+                    await deleteAllPokemonFromDB();
                   alert(
                     `Delete: ${success}, deleted ${deletedCount} pokemon from pokedex_pokemon`,
                   );
