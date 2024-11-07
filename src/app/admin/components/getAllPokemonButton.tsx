@@ -15,8 +15,7 @@ export default function GetAllPokemonButton() {
       disabled={isPending}
       onClick={() => {
         startTransition(async () => {
-          const { success, allPokemonList, pokemonCount } =
-            await getAllPokemonFromDB();
+          const { success, pokemonCount } = await getAllPokemonFromDB();
           alert(
             `Fetch: ${success}, fetched ${pokemonCount} pokemon from pokedex_pokemon`,
           );

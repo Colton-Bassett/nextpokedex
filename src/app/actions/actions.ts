@@ -55,6 +55,7 @@ export async function savePokemonToDB(pokemonList: Pokemon[]) {
 
     return { success: true };
   } catch (error) {
+    console.log(error);
     throw new Error(
       "savePokemonToDB() error. Possible duplicate Pokémon found in the database.",
     );
@@ -120,6 +121,7 @@ export async function fetchPokemonFromAPI() {
     }
     return pokemonList;
   } catch (error) {
+    console.log(error);
     throw new Error("fetchPokemonFromAPI() error. Possible PokeAPI issue.");
   }
 }
