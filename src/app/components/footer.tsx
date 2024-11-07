@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Flex } from "@radix-ui/themes";
+import { Flex, Text } from "@radix-ui/themes";
 
 export default function Footer() {
   return (
@@ -16,19 +16,19 @@ export default function Footer() {
               height={19}
               priority
             />
-            <span className="">Pokedex</span>
+            <Text className="">Pokedex</Text>
           </Link>
           <Link
             href="/help"
             className="text-stone-500 transition-colors duration-200 hover:text-stone-900"
           >
-            <span className="">Help</span>
+            <Text className="">Help</Text>
           </Link>
           <Link
             href="/disclaimer"
             className="text-stone-500 transition-colors duration-200 hover:text-stone-900"
           >
-            <span className="">Disclaimer</span>
+            <Text className="">Disclaimer</Text>
           </Link>
         </Flex>
       </Flex>

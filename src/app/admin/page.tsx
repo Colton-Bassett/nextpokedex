@@ -15,9 +15,9 @@ export default function AdminPage() {
         align="center"
       >
         <Text className="mb-8 text-xl text-gray-500">
-          <span className="mr-4 text-3xl font-bold text-gray-900">
+          <Text className="mr-4 text-3xl font-bold text-gray-900">
             Admin Page
-          </span>
+          </Text>
           Everything you need to build great pokemon on the web.
         </Text>
         <Grid
