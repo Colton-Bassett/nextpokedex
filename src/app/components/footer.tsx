@@ -22,13 +22,13 @@ export default function Footer() {
             href="/help"
             className="text-stone-500 transition-colors duration-200 hover:text-stone-900"
           >
-            <span className="text-lg">Help</span>
+            <span className="">Help</span>
           </Link>
           <Link
             href="/disclaimer"
             className="text-stone-500 transition-colors duration-200 hover:text-stone-900"
           >
-            <span className="text-lg">Disclaimer</span>
+            <span className="">Disclaimer</span>
           </Link>
         </Flex>
       </Flex>
