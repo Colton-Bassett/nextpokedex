@@ -1,6 +1,7 @@
 import { Flex, Text, Card, Grid } from "@radix-ui/themes";
 import GetAllPokemonButton from "./components/getAllPokemonButton";
 import DeleteAllPokemonButton from "./components/deleteAllPokemonButton";
+import SaveAllPokemonButton from "./components/saveAllPokemonButton";
 
 export default function AdminPage() {
   return (
@@ -35,7 +36,7 @@ export default function AdminPage() {
             title="Save Pokemon"
             subtitle="Fetch and save all pokemon to postgres database"
           >
-            <GetAllPokemonButton />
+            <SaveAllPokemonButton />
           </AdminCard>
           <AdminCard
             title="Delete Pokemon"

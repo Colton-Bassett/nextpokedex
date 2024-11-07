@@ -55,8 +55,9 @@ export async function savePokemonToDB(pokemonList: Pokemon[]) {
 
     return { success: true };
   } catch (error) {
-    console.error("Error inserting Pokémon into database:", error);
-    return { error };
+    throw new Error(
+      "savePokemonToDB() error. Possible duplicate Pokémon found in the database.",
+    );
   }
 }
 
@@ -74,16 +75,24 @@ export async function getAllPokemonFromDB() {
     };
   } catch (error) {
     console.error("Error fetching all pokemon from DB:", error);
-    return { error };
+    return { success: false, allPokemonList: [], pokemonCount: 0 };
   }
 }
 
 // Main function
 export async function fetchAndSavePokemonToDB() {
-  const pokemon = await fetchPokemonFromAPI();
-  // console.log(pokemon);
-  if (pokemon) {
-    savePokemonToDB(pokemon);
+  try {
+    const pokemon = await fetchPokemonFromAPI();
+    // console.log(pokemon);
+
+    if (pokemon && pokemon.length > 0) {
+      await savePokemonToDB(pokemon);
+    }
+
+    return { success: true, pokemonCount: pokemon?.length };
+  } catch (error) {
+    console.error("Error saving all pokemon to DB:", error);
+    return { success: false, pokemonCount: 0 };
   }
 }
 
@@ -111,6 +120,6 @@ export async function fetchPokemonFromAPI() {
     }
     return pokemonList;
   } catch (error) {
-    console.error("Error fetching Pokémon names:", error);
+    throw new Error("fetchPokemonFromAPI() error. Possible PokeAPI issue.");
   }
 }
