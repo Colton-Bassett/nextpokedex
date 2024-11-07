@@ -1,5 +1,5 @@
 "use server";
-import { capitalizeFirstLetter } from "@/lib/utils";
+import { capitalizeFirstLetter, isAuthenticatedAction } from "@/lib/utils";
 import { sql } from "@vercel/postgres";
 
 interface Pokemon {
@@ -9,10 +9,14 @@ interface Pokemon {
 }
 
 // DB
-
 export async function deleteAllPokemonFromDB() {
   try {
-    // check if authenticated
+    // check if admin user
+    const isAuthorized = await isAuthenticatedAction();
+    if (!isAuthorized) {
+      return { success: false, deletedCount: 0 };
+    }
+
     const result = await sql`DELETE FROM pokedex_pokemon;`;
     console.log(
       `Delete: ${true}, deleted ${result.rowCount} rows from pokedex_pokemon`,
@@ -27,6 +31,12 @@ export async function deleteAllPokemonFromDB() {
 
 // saves a list of pokemon to db, called from fetchAndSavePokemonToDB()
 export async function savePokemonToDB(pokemonList: Pokemon[]) {
+  // check if admin user
+  const isAuthorized = await isAuthenticatedAction();
+  if (!isAuthorized) {
+    throw new Error("savePokemonToDB() error. Unauthorized.");
+  }
+
   try {
     if (pokemonList.length === 0) {
       return { success: true }; // No pokemon to insert
@@ -62,7 +72,7 @@ export async function savePokemonToDB(pokemonList: Pokemon[]) {
   }
 }
 
-// Shows all pokemon in db
+// Returns all pokemon in db
 export async function getAllPokemonFromDB() {
   try {
     const result = await sql`SELECT * FROM pokedex_pokemon`;
@@ -82,12 +92,20 @@ export async function getAllPokemonFromDB() {
 
 // Main function
 export async function fetchAndSavePokemonToDB() {
+  // check if admin user
+  const isAuthorized = await isAuthenticatedAction();
+  if (!isAuthorized) {
+    return { success: false, deletedCount: 0 };
+  }
+
   try {
     const pokemon = await fetchPokemonFromAPI();
     // console.log(pokemon);
 
     if (pokemon && pokemon.length > 0) {
       await savePokemonToDB(pokemon);
+    } else {
+      return { success: false, pokemonCount: 0 };
     }
 
     return { success: true, pokemonCount: pokemon?.length };
@@ -98,10 +116,15 @@ export async function fetchAndSavePokemonToDB() {
 }
 
 // API
-
 // Fetches all pokemon from pokeAPI
 export async function fetchPokemonFromAPI() {
   const pokemonList: Pokemon[] = [];
+
+  // check if admin user
+  const isAuthorized = await isAuthenticatedAction();
+  if (!isAuthorized) {
+    throw new Error("fetchPokemonFromAPI() error. Unauthorized.");
+  }
 
   try {
     for (let id = 1; id <= 151; id++) {
