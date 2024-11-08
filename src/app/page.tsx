@@ -1,4 +1,4 @@
-import { Flex } from "@radix-ui/themes";
+import { Box, Button, Flex } from "@radix-ui/themes";
 import GetPokemonButton from "./admin/components/getAllPokemonButton";
 import Pokemon, { PokemonList } from "./components/pokemon";
 import Link from "next/link";
@@ -35,8 +35,15 @@ export default async function Home() {
               </Link>
             ))}
           </PokemonList>
-          <Flex direction="column" gap="2" minWidth="100%" className="mt-8">
-            <GetPokemonButton />
+          <Flex minWidth="" className="mt-8" justify="center">
+            {/* <GetPokemonButton /> */}
+            <Button
+              color="gray"
+              variant="surface"
+              className="loadMorePokemonButton"
+            >
+              Load More
+            </Button>
           </Flex>
         </Flex>
       </Flex>

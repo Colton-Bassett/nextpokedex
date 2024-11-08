@@ -9,3 +9,24 @@
   --cursor-slider-thumb-active: grabbing;
   --cursor-switch: pointer;
 }
+
+/* home page.tsx */
+.loadMorePokemonButton {
+  padding: 24px;
+  color: #111827;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.loadMorePokemonButton:hover {
+  background-color: #f3f4f6;
+}
+
+/* admin page.tsx buttons */
+.adminButton {
+  font-size: 1rem;
+  padding: 18px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}

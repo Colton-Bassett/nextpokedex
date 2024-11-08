@@ -13,6 +13,7 @@ export default function GetAllPokemonButton() {
       variant="solid"
       highContrast
       disabled={isPending}
+      className="adminButton"
       onClick={() => {
         startTransition(async () => {
           const { success, pokemonCount } = await getAllPokemonFromDB();

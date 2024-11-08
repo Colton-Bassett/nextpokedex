@@ -149,9 +149,7 @@ export default function Pokemon({
               align="center"
               justify="center"
             >
-              <Text
-                className={`${getPokemonTypeTextColor(typeA)} text-sm font-light`}
-              >
+              <Text className={`${getPokemonTypeTextColor(typeA)} text-sm`}>
                 {typeA}
               </Text>
             </Flex>
@@ -165,9 +163,7 @@ export default function Pokemon({
               align="center"
               justify="center"
             >
-              <Text
-                className={`${getPokemonTypeTextColor(typeB)} text-sm font-light`}
-              >
+              <Text className={`${getPokemonTypeTextColor(typeB)} text-sm`}>
                 {typeB}
               </Text>
             </Flex>

@@ -10,7 +10,12 @@ export default function DeleteAllPokemonButton() {
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <Button color="red" variant="solid" disabled={isPending}>
+        <Button
+          color="red"
+          variant="solid"
+          disabled={isPending}
+          className="adminButton"
+        >
           {isPending ? "Deleting..." : "Delete"}
         </Button>
       </Dialog.Trigger>
@@ -33,6 +38,7 @@ export default function DeleteAllPokemonButton() {
               color="red"
               variant="solid"
               disabled={isPending}
+              className=""
               onClick={() => {
                 startTransition(async () => {
                   const { success, deletedCount } =
