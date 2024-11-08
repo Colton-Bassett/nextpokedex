@@ -71,9 +71,11 @@ pnpm build
 - Radix UI (Component Library)
 
   - Pros
-    - Feature 1
+    - Generally fast development
+    - Components look simple and clean
   - Cons
-    - Feature 1
+    - Not plug-and-play; need to read documentation on Radix UI design methodology
+    - Custom styling of components is an unintuitive hassle
 
 - Tailwind (CSS Framework)
   - Pros
