@@ -1,3 +1,8 @@
+// import {
+//   separatePokemonTypes,
+//   getPokemonTypeTextColor,
+//   getPokemonTypeColor,
+// } from "@/lib/utils";
 import { Card, Flex, Text, Grid, Inset } from "@radix-ui/themes";
 import Image from "next/image";
 
@@ -192,7 +197,7 @@ export function PokemonList({
   );
 }
 
-function separatePokemonTypes(type: string): string[] {
+export function separatePokemonTypes(type: string): string[] {
   // List of all valid Pokémon types
   const validTypes = [
     "Normal",
@@ -221,7 +226,7 @@ function separatePokemonTypes(type: string): string[] {
   return types;
 }
 
-function getPokemonTypeColor(type: string): string {
+export function getPokemonTypeColor(type: string): string {
   const typeColorMap: { [key: string]: string } = {
     Normal: "bg-gray-300",
     Fire: "bg-red-300",
@@ -246,7 +251,7 @@ function getPokemonTypeColor(type: string): string {
   return typeColorMap[type] || "bg-gray-200"; // Returns a default color if type not found
 }
 
-function getPokemonTypeTextColor(type: string): string {
+export function getPokemonTypeTextColor(type: string): string {
   const typeColorMap: { [key: string]: string } = {
     Normal: "text-gray-900",
     Fire: "text-red-900",

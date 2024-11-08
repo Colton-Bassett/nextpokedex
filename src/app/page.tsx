@@ -8,15 +8,6 @@ export default async function Home() {
   //     await sql`SELECT * FROM pokedex_pokemon ORDER BY RANDOM() LIMIT 12`;
   //   console.log(rows);
 
-  // const fetchPokemon = async () => {
-  // 	const data = await getAllPokemonFromDB();
-  // 	if (data) {
-  // 		console.log(data);
-  // 	} else {
-  // 		console.error("Failed to fetch Pokémon:");
-  // 	}
-  // };
-
   const rows = [
     { id: 75, name: "Graveler", type: "GroundRock" },
     { id: 149, name: "Dragonite", type: "DragonFlying" },

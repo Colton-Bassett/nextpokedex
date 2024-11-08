@@ -13,18 +13,22 @@ export default async function PokemonPage({
   ).rows[0];
 
   return (
-    <Flex className="flex min-h-screen min-w-full items-center justify-items-center p-8 pb-20">
-      <Flex className="m-auto flex w-full max-w-4xl flex-col items-center px-7">
-        <Flex
-          direction="column"
-          gap="2"
-          align="center"
-          justify="center"
-          className="items-center"
-        >
-          <Text>Pokemon Page</Text>
-          <Pokemon id={pokemon.id} name={pokemon.name} type={pokemon.type} />
-        </Flex>
+    <Flex
+      direction="column"
+      className="m-auto min-h-screen min-w-full bg-[linear-gradient(180deg,#fff_10%,#fafafa_30%,#fafafa_100%)] p-8 pb-20"
+    >
+      <Flex
+        className="mx-auto w-full max-w-4xl"
+        direction="column"
+        align="center"
+      >
+        <Text className="mb-8 text-xl text-gray-500">
+          <Text className="mr-4 text-3xl font-bold text-gray-900">
+            Pokemon Page
+          </Text>
+          Built on a foundation of fast, production-grade tooling.
+        </Text>
+        <Pokemon id={pokemon.id} name={pokemon.name} type={pokemon.type} />
       </Flex>
     </Flex>
   );

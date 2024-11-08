@@ -13,7 +13,11 @@ Next.js, Radix, Tailwind, Vercel
 - [x] Get dynamic routes / pages working
 - [x] Finish error handling (sql)
 - [x] Implement basic authorization in server actions
-- [ ] Finish nextifying UI
+- [ ] Fix lib/utils bug with pokemon color processing
+- [ ] Finish nextifying UI (button)
+- [ ] Delete redundant api route
+- [ ] Figure out fonts
+- [ ] Write summary
 
 ## Extras
 
