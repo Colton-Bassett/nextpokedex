@@ -77,7 +77,7 @@ export async function getAllPokemonFromDB() {
   try {
     const result = await sql`SELECT * FROM pokedex_pokemon`;
     const allPokemonList = result.rows;
-    console.log(allPokemonList);
+    // console.log(allPokemonList);
 
     return {
       success: true,

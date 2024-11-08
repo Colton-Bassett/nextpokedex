@@ -62,7 +62,6 @@ export async function isAuthenticatedAction() {
 }
 
 // pokemon.tsx data processing/formatting
-
 export function separatePokemonTypes(type: string): string[] {
   // List of all valid Pokémon types
   const validTypes = [
