@@ -1,6 +1,6 @@
 ## Next.js Pokedex
 
-Next.jsm, Radix, Tailwind, Vercel
+Next.js, Radix, Tailwind, Vercel
 
 ## Todo
 
@@ -11,9 +11,9 @@ Next.jsm, Radix, Tailwind, Vercel
 - [x] Display data
 - [x] Refine UI
 - [x] Get dynamic routes / pages working
-- [ ] Finish error handling (sql)
-- [ ] Attempt to implement basic authentication inside server actions
-- [ ] Handle loading states (skeletons)
+- [x] Finish error handling (sql)
+- [x] Implement basic authorization in server actions
+- [ ] Finish nextifying UI
 
 ## Extras
 

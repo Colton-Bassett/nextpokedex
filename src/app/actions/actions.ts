@@ -72,7 +72,7 @@ export async function savePokemonToDB(pokemonList: Pokemon[]) {
   }
 }
 
-// Returns all pokemon in db
+// returns all pokemon in db
 export async function getAllPokemonFromDB() {
   try {
     const result = await sql`SELECT * FROM pokedex_pokemon`;
@@ -90,7 +90,7 @@ export async function getAllPokemonFromDB() {
   }
 }
 
-// Main function
+// main function
 export async function fetchAndSavePokemonToDB() {
   // check if admin user
   const isAuthorized = await isAuthenticatedAction();
@@ -116,7 +116,7 @@ export async function fetchAndSavePokemonToDB() {
 }
 
 // API
-// Fetches all pokemon from pokeAPI
+// fetches all pokemon from pokeAPI
 export async function fetchPokemonFromAPI() {
   const pokemonList: Pokemon[] = [];
 

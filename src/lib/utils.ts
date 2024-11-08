@@ -2,11 +2,12 @@ import { NextRequest } from "next/server";
 import { isValidPassword } from "./isValidPassword";
 import { headers } from "next/headers";
 
-// server action helpers
+// formatting pokemon name and types from fetchPokemonFromAPI()
 export function capitalizeFirstLetter(string: string): string {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+// for debugging
 export async function mockSlowRequest() {
   return new Promise((resolve) => {
     // Simulate a delay of 2 seconds (2000 milliseconds)
