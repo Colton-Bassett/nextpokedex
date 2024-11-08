@@ -21,7 +21,7 @@ export default function Pokemon({
   return (
     <Card
       key={id}
-      className="min-w-44 bg-transparent transition-shadow duration-200 ease-in-out hover:bg-white hover:shadow-[0_0_0_0.25px_rgba(1,1,1,1)]"
+      className="min-w-44 bg-transparent transition-shadow duration-200 ease-in-out hover:bg-white hover:shadow-[0_0_0_0.25px_rgba(0,0,0,1)]"
     >
       <Flex direction="column" align="center">
         <Flex className="relative">

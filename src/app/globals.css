@@ -2,18 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* custom radix overrides */
+.radix-themes {
+  --cursor-button: pointer;
+  --cursor-checkbox: pointer;
+  --cursor-disabled: default;
+  --cursor-link: pointer;
+  --cursor-menu-item: pointer;
+  --cursor-radio: pointer;
+  --cursor-slider-thumb: grab;
+  --cursor-slider-thumb-active: grabbing;
+  --cursor-switch: pointer;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* home page.tsx */
+.loadMorePokemonButton {
+  padding: 24px;
+  color: #111827;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+.loadMorePokemonButton:hover {
+  background-color: #f3f4f6;
+}
+
+/* admin page.tsx buttons */
+.adminButton {
+  font-size: 1rem;
+  padding: 18px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
 }

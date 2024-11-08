@@ -14,8 +14,8 @@ Next.js, Radix, Tailwind, Vercel
 - [x] Finish error handling (sql)
 - [x] Implement basic authorization in server actions
 - [ ] Fix lib/utils bug with pokemon color processing
-- [ ] Finish nextifying UI (button)
-- [ ] Delete redundant api route
+- [x] Finish nextifying UI (button)
+- [x] Delete redundant api route
 - [ ] Figure out fonts
 - [ ] Write summary
 

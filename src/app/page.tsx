@@ -1,7 +1,8 @@
-import { Box, Button, Flex } from "@radix-ui/themes";
-import GetPokemonButton from "./admin/components/getAllPokemonButton";
+import { Flex } from "@radix-ui/themes";
 import Pokemon, { PokemonList } from "./components/pokemon";
 import Link from "next/link";
+import LoadMorePokemonButton from "./components/loadMorePokemonButton";
+// import { sql } from "@vercel/postgres";
 
 export default async function Home() {
   //   const { rows } =
@@ -36,14 +37,7 @@ export default async function Home() {
             ))}
           </PokemonList>
           <Flex minWidth="" className="mt-8" justify="center">
-            {/* <GetPokemonButton /> */}
-            <Button
-              color="gray"
-              variant="surface"
-              className="loadMorePokemonButton"
-            >
-              Load More
-            </Button>
+            <LoadMorePokemonButton />
           </Flex>
         </Flex>
       </Flex>
