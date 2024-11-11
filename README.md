@@ -1,8 +1,6 @@
 ## Next.js Pokedex
 
-[NextPokedex](https://nextpokedex-alpha.vercel.app/) is the first part of a three-phase project to build a Pokedex app using three distinct React tech stacks. In this version, all database and API interactions are done using server components and server actions without useEffects, hooks, or other lifecycle React Methods.
-
-Users can explore 12 randomly selected Pokémon and visit dynamic URLs to view detailed information about each one.
+[NextPokedex](https://nextpokedex-alpha.vercel.app/) is the first part of a three-phase project to build a Pokedex app using three distinct React tech stacks. In this version, users can explore 12 randomly selected Pokémon and visit dynamic URLs to view detailed information about each one.
 
 [Authenticated](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate) users gain access to an admin panel, where they can interact with the app’s database—fetching Pokémon data from the [PokeAPI](https://pokeapi.co/), and saving, updating, or deleting Pokémon records stored in a Postgres database.
 
@@ -10,8 +8,8 @@ NextPokedex is built with [Next.js](https://nextjs.org/) as the React framework,
 
 ## Goals
 
-1. Build a simple, full-stack application
-2. Showcase the power and simplicity of server components and server actions by fetching from a database without useEffect, hooks, or other lifecycle React methods
+1. Build a simple, full-stack application with Next.js
+2. **Showcase the power and simplicity of server components and server actions by fetching from a database without useEffect, hooks, or other lifecycle React methods**
 3. Gain a deeper understanding of Next.js's static vs. dynamic and client side loading
 4. Explore a Next.js-inspired UI methodology
 5. Conduct an informal developer experience review using: Next.js, Vercel, Vercel Postgres, Radix Themes, and Tailwind
@@ -106,3 +104,8 @@ pnpm build
   - Cons
     - Hard-to-read styling for any moderately complex elements
     - Poor readability when there's many elements in one component
+
+## Dev Notes
+
+- Admin dashboard https://nextpokedex-alpha.vercel.app/admin or http://localhost:3000/
+- Vercel: gh

@@ -2,26 +2,27 @@ import { Flex } from "@radix-ui/themes";
 import Pokemon, { PokemonList } from "./components/pokemon";
 import Link from "next/link";
 import LoadMorePokemonButton from "./components/loadMorePokemonButton";
-// import { sql } from "@vercel/postgres";
+import { sql } from "@vercel/postgres";
 
 export default async function Home() {
-  //   const { rows } =
-  //     await sql`SELECT * FROM pokedex_pokemon ORDER BY RANDOM() LIMIT 12`;
+  const { rows } =
+    await sql`SELECT * FROM pokedex_pokemon ORDER BY RANDOM() LIMIT 12`;
 
-  const rows = [
-    { id: 75, name: "Graveler", type: "GroundRock" },
-    { id: 149, name: "Dragonite", type: "DragonFlying" },
-    { id: 134, name: "Vaporeon", type: "Water" },
-    { id: 110, name: "Weezing", type: "Poison" },
-    { id: 40, name: "Wigglytuff", type: "NormalFairy" },
-    { id: 44, name: "Gloom", type: "GrassPoison" },
-    { id: 108, name: "Lickitung", type: "Normal" },
-    { id: 86, name: "Seel", type: "Water" },
-    { id: 133, name: "Eevee", type: "Normal" },
-    { id: 137, name: "Porygon", type: "Normal" },
-    { id: 91, name: "Cloyster", type: "WaterIce" },
-    { id: 45, name: "Vileplume", type: "GrassPoison" },
-  ];
+  // debug
+  //   const rows = [
+  //     { id: 75, name: "Graveler", type: "GroundRock" },
+  //     { id: 149, name: "Dragonite", type: "DragonFlying" },
+  //     { id: 134, name: "Vaporeon", type: "Water" },
+  //     { id: 110, name: "Weezing", type: "Poison" },
+  //     { id: 40, name: "Wigglytuff", type: "NormalFairy" },
+  //     { id: 44, name: "Gloom", type: "GrassPoison" },
+  //     { id: 108, name: "Lickitung", type: "Normal" },
+  //     { id: 86, name: "Seel", type: "Water" },
+  //     { id: 133, name: "Eevee", type: "Normal" },
+  //     { id: 137, name: "Porygon", type: "Normal" },
+  //     { id: 91, name: "Cloyster", type: "WaterIce" },
+  //     { id: 45, name: "Vileplume", type: "GrassPoison" },
+  //   ];
 
   return (
     <main className="min-h-screen min-w-full flex-col items-center justify-items-center bg-[linear-gradient(180deg,#fff_10%,#fafafa_30%,#fafafa_100%)] p-8 pb-20">
