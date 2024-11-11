@@ -6,7 +6,7 @@ Users can explore 12 randomly selected Pokémon and visit dynamic URLs to view d
 
 [Authenticated](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate) users gain access to an admin panel, where they can interact with the app’s database—fetching Pokémon data from the [PokeAPI](https://pokeapi.co/), and saving, updating, or deleting Pokémon records stored in a Postgres database.
 
-NextPokedex is built with [Next.js](https://nextjs.org/) as the React framework, [Vercel](https://vercel.com/) for hosting, and Vercel [Postgres](https://vercel.com/docs/storage/vercel-postgres) for cloud-based data storage. The app also leverages [Radix UI](https://www.radix-ui.com/) for accessible UI components and [Tailwind CSS](https://tailwindcss.com/) for styling.
+NextPokedex is built with [Next.js](https://nextjs.org/) as the React framework, [Vercel](https://vercel.com/) for hosting, and Vercel [Postgres](https://vercel.com/docs/storage/vercel-postgres) for cloud-based data storage. The app also leverages [Radix Themes](https://www.radix-ui.com/) for accessible UI components and [Tailwind CSS](https://tailwindcss.com/) for styling.
 
 ## Goals
 
@@ -14,7 +14,7 @@ NextPokedex is built with [Next.js](https://nextjs.org/) as the React framework,
 2. Showcase the power and simplicity of server components and server actions by fetching from a database without useEffect, hooks, or other lifecycle React methods
 3. Gain a deeper understanding of Next.js's static vs. dynamic and client side loading
 4. Explore a Next.js-inspired UI methodology
-5. Conduct an informal developer experience review using: Next.js, Vercel, Vercel Postgres, Radix UI, and Tailwind
+5. Conduct an informal developer experience review using: Next.js, Vercel, Vercel Postgres, Radix Themes, and Tailwind
 
 ## Todo
 
@@ -33,7 +33,7 @@ NextPokedex is built with [Next.js](https://nextjs.org/) as the React framework,
 
 ## Extras
 
-- [ ] Add extra pokemon data
+- [ ] Add extra Pokémon data
 - [ ] Add Fonts
 - [ ] Dark and Light mode
 - [ ] Fetch throttling
@@ -53,19 +53,20 @@ pnpm build
 
 ## Review
 
-- Next.js (React Framework)
+- Next.js (React Framework) - 8/10
 
   - Pros
     - New, innovative framework, closely related with the React team
     - Server generated, async friendly development from the ground up
     - UI Looks great
     - Documentation is great
+    - Developing mastery of the framework feels fun and empowering
   - Cons
     - A lot of extra small things to learn
-    - Sometimes framework implementations feel complicated, or very specific
+    - Some framework implementations feel complicated, hack-y, or very specific
     - Version updates can seemingly 180 design methodology
 
-- Vercel (Hosting)
+- Vercel (Hosting) - 10/10
 
   - Pros
     - Extremely easy 1 click hosting
@@ -75,7 +76,7 @@ pnpm build
   - Cons
     - N/A
 
-- Vercel Postgres (Database)
+- Vercel Postgres (Database) - 9/10
 
   - Pros
     - Extremely easy to setup
@@ -84,17 +85,24 @@ pnpm build
   - Cons
     - Could have better documentation for non-ORM implementations
 
-- Radix UI (Component Library)
+- Radix Themes (Component Library) - 6/10
 
   - Pros
     - Generally fast development
     - Components look simple and clean
+    - Components are accessibility friendly
   - Cons
-    - Not plug-and-play; need to read documentation on Radix UI design methodology
     - Custom styling of components is an unintuitive hassle
+    - Not plug-and-play; need to read documentation on Radix Themes design methodology
+    - Docs could be more comprehensive
+    - Doesn't tend to play well with Tailwind
 
-- Tailwind (CSS Framework)
+- Tailwind (CSS Framework) - 8.5/10
   - Pros
-    - Feature 1
+    - Fast development
+    - Easy, intuitive implementation
+    - Clear, comprehensive docs
+    - Easy-to-read styling for simple elements
   - Cons
-    - Feature 1
+    - Hard-to-read styling for any moderately complex elements
+    - Poor readability when there's many elements in one component
