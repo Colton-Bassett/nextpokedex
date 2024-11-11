@@ -4,6 +4,8 @@ import Link from "next/link";
 import LoadMorePokemonButton from "./components/loadMorePokemonButton";
 import { sql } from "@vercel/postgres";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const { rows } =
     await sql`SELECT * FROM pokedex_pokemon ORDER BY RANDOM() LIMIT 12`;
