@@ -23,7 +23,7 @@ export default async function PokemonPage({
         align="center"
       >
         <Flex className="mb-8 flex-col items-center justify-center sm:flex-row">
-          <Text className="text-center text-3xl font-bold text-gray-900 sm:mr-4">
+          <Text className="mb-3 text-center text-3xl font-bold text-gray-900 sm:mb-0 sm:mr-4">
             Pokemon Page
           </Text>
           <Text className="text-center text-xl text-gray-500">

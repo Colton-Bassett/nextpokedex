@@ -19,15 +19,6 @@ export default function Nav() {
           />
           <Text className="">Pokedex</Text>
         </Link>
-        {/* <Link href="/" className="flex gap-3 text-2xl">
-          <Image
-            width={20}
-            height={20}
-            src="/github.svg"
-            alt="Github logo"
-            priority
-          />
-        </Link> */}
         <Flex gap="4" className="hidden sm:flex">
           <Link href="/admin" prefetch={false}>
             <Button
@@ -57,7 +48,7 @@ export default function Nav() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button color="gray" variant="solid" highContrast className="">
+            <Button color="gray" variant="solid" highContrast>
               Github
             </Button>
           </Link>
