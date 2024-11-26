@@ -14,16 +14,19 @@ export default function AdminPage() {
         direction="column"
         align="center"
       >
-        <Text className="mb-8 text-xl text-gray-500">
-          <Text className="mr-4 text-3xl font-bold text-gray-900">
+        <Flex className="mb-8 flex-col items-center justify-center sm:flex-row">
+          <Text className="text-center text-3xl font-bold text-gray-900 sm:mr-4">
             Admin Page
           </Text>
-          Everything you need to build great pokemon on the web.
-        </Text>
+          <Text className="text-center text-xl text-gray-500">
+            Everything you need to build great pokemon on the web.
+          </Text>
+        </Flex>
+
         <Grid
           columns={{ initial: "1", sm: "1", md: "3" }}
           gap="8"
-          rows="repeat(1,180px)"
+          rows="repeat"
           width="auto"
         >
           <AdminCard

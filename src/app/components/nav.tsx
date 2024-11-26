@@ -29,7 +29,7 @@ export default function Nav() {
             priority
           />
         </Link> */}
-        <Flex gap="4">
+        <Flex gap="4" className="hidden sm:flex">
           <Link href="/admin">
             <Button
               color="gray"
