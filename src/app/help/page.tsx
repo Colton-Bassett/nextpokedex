@@ -34,17 +34,20 @@ export default function HelpPage() {
           direction="column"
         >
           <Text className="mb-8">
-            The goal of this website is to quickly fetch and display 12 random
-            Pokémon from a pool of 151 Generation One Pokémon stored in a
-            PostgreSQL database. Users can refresh the list by clicking the
-            Fetch button on the Home Page. Additionally, clicking on any Pokémon
-            will navigate to a detail page with a unique URL for each Pokémon.
+            This website displays 12 randomly selected Gen 1 Pokémon from a list
+            of 151. Data is fetched from PokéAPI and stored in a PostgreSQL
+            database. Users can refresh the list by clicking the{" "}
+            <code className="rounded-md border border-[#ededed] bg-[#f7f7f7] px-1 py-1 text-sm text-[#0074de]">
+              Load more
+            </code>{" "}
+            button on the Home Page. Clicking a Pokémon leads to a basic detail
+            page with a unique URL.
           </Text>
           <Text className="mb-8">
-            Built with modern Next.js architecture, the initial Pokémon data is
-            fetched server-side and statically served to the client for fast
-            load times. Subsequent requests are dynamically served, ensuring
-            fast database queries and a seamless user experience.
+            Built with modern Next.js architecture, Pokémon data is fetched
+            server-side and statically served to the client for fast load times.
+            Subsequent requests are dynamically served, ensuring fast database
+            queries and a seamless user experience.
           </Text>
           <Text className="mb-8">
             An admin page is also available, which requires basic

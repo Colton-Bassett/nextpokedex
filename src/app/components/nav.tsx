@@ -30,7 +30,7 @@ export default function Nav() {
           />
         </Link> */}
         <Flex gap="4" className="hidden sm:flex">
-          <Link href="/admin">
+          <Link href="/admin" prefetch={false}>
             <Button
               color="gray"
               variant="outline"
