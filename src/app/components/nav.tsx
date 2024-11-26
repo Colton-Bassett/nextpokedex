@@ -11,7 +11,6 @@ export default function Nav() {
       <Flex gap="3" className="h-16 items-center justify-between border-b px-7">
         <Link href="/" className="flex gap-3 text-2xl">
           <Image
-            className="dark:invert"
             src="/next.svg"
             alt="Next.js logo"
             width={90}

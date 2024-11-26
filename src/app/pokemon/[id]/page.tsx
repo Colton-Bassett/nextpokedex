@@ -22,12 +22,20 @@ export default async function PokemonPage({
         direction="column"
         align="center"
       >
-        <Text className="mb-8 text-xl text-gray-500">
+        {/* <Text className="mb-8 text-xl text-gray-500">
           <Text className="mr-4 text-3xl font-bold text-gray-900">
             Pokemon Page
           </Text>
           Built on a foundation of fast, production-grade tooling.
-        </Text>
+        </Text> */}
+        <Flex className="mb-8 flex-col items-center justify-center sm:flex-row">
+          <Text className="text-center text-3xl font-bold text-gray-900 sm:mr-4">
+            Pokemon Page
+          </Text>
+          <Text className="text-center text-xl text-gray-500">
+            Built on a foundation of fast, production-grade tooling.
+          </Text>
+        </Flex>
         <Pokemon id={pokemon.id} name={pokemon.name} type={pokemon.type} />
       </Flex>
     </Flex>

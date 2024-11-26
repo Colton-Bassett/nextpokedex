@@ -125,7 +125,6 @@ export default function Pokemon({
 
             <Box className="absolute top-0">
               <Image
-                className="dark:invert"
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
                 alt={`${name} sprite`}
                 width={128}

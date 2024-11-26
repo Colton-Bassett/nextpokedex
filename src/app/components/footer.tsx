@@ -9,7 +9,6 @@ export default function Footer() {
         <Flex gap="7" className="min-w-[470px] items-center">
           <Link href="/" className="flex gap-3 text-2xl">
             <Image
-              className="dark:invert"
               src="/next.svg"
               alt="Next.js logo"
               width={90}
